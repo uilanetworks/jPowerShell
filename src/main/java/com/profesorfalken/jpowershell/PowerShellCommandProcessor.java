@@ -75,7 +75,9 @@ class PowerShellCommandProcessor implements Callable<String> {
         }
 
         //Remove last CRLF from result
-        return powerShellOutput.toString().replaceAll("\\s+$", "");
+        //return powerShellOutput.toString().replaceAll("\\s+$", "");
+        // Uila - do not strip away ending CR as it was merging output stings together
+        return powerShellOutput.toString();
     }
 
     //Reads all data from output
